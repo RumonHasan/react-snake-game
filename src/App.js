@@ -62,10 +62,12 @@ const App = () => {
         const newSnakeHead = [snakeCopy[0][0] + direction[0], snakeCopy[0][1] + direction[1]];
         snakeCopy.unshift(newSnakeHead);
         if(checkCollision(newSnakeHead)) endGame();
+        if(checkAppleEat(newSnakeHead, ))
         snakeCopy.pop(); // removes the last element
         setSnake(snakeCopy);
     }
 
+    // primary game loop running on useInterval 
     useInterval(()=> gameLoop(), speed);
 
     useEffect(()=>{
